@@ -53,6 +53,22 @@ class Grid:
             self.set(j, 0, self.wall)
             self.set(j, self.height - 1, self.wall)
 
+            # Skapa sammanhängande väggar, börjar med horisontell
+        for i in range(8, 18):
+            self.set(i, 8, self.wall)
+            # Vertikal vägg
+        for x in range(8, 12):
+            self.set(17, x, self.wall)
+
+        # Fler väggar
+        # Horisontell
+        for x in range(25, 31):
+            self.set(x, 3, self.wall)
+        # Vertikal
+        for y in range(3, 7):
+            self.set(25, y, self.wall)
+
+
 
     # Används i filen pickups.py
     def get_random_x(self):

@@ -14,7 +14,13 @@ class Player:
         self.pos_y += dy
 
     def can_move(self, x, y, grid):
-        return True
-        #TODO: returnera True om det inte står något i vägen
+        ny_x = self.pos_x + x
+        ny_y = self.pos_y + y
+
+        # Vad finns på spelarens nya position
+        ny_ruta = grid.get(ny_x, ny_y)
+
+        # Returnera True om det inte är vägg på nya positionen
+        return ny_ruta != grid.wall
 
 
